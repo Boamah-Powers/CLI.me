@@ -8,13 +8,27 @@ import WelcomeMessage from '@/app/components/WelcomeMessage';
 import { useTerminalStore } from '@/app/lib/store';
 
 export default function TerminalWindow() {
-  const { outputs, addOutput } = useTerminalStore();
+  const { outputs } = useTerminalStore();
   const terminalRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     // Scroll to bottom when new output is added
     if (terminalRef.current) {
-      terminalRef.current.scrollTop = terminalRef.current.scrollHeight;
+      const scrollToBottom = () => {
+        terminalRef.current?.scrollTo({
+          top: terminalRef.current.scrollHeight,
+          behavior: 'smooth'
+        });
+      };
+      
+      // Initial scroll
+      scrollToBottom();
+      
+      // Create observer to watch for content changes
+      const observer = new MutationObserver(scrollToBottom);
+      observer.observe(terminalRef.current, { childList: true, subtree: true });
+      
+      return () => observer.disconnect();
     }
   }, [outputs]);
 
@@ -27,9 +41,9 @@ export default function TerminalWindow() {
     >
       <div
         ref={terminalRef}
-        className="w-full h-full overflow-y-auto"
+        className="w-full h-full overflow-y-auto scroll-smooth"
       >
-        <div className="flex flex-col">
+        <div className="flex flex-col min-h-full">
           <WelcomeMessage />
           {outputs.map((output, index) => (
             <OutputDisplay key={index} output={output} />
