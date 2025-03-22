@@ -1,36 +1,66 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Terminal-Style Personal Website
+
+A modern, interactive personal website that mimics a terminal/command-line interface. Built with Next.js, TypeScript, and Tailwind CSS.
+
+## Features
+
+- 🖥️ Authentic terminal look and feel
+- ⌨️ Interactive command-line interface
+- 📝 Typing animations for output
+- 🔄 Command history navigation
+- 🎨 Custom terminal styling with scanlines
+- 📱 Mobile-responsive design
+- ♿ Accessibility support
+
+## Tech Stack
+
+- Next.js 14 (App Router)
+- TypeScript
+- Tailwind CSS
+- Framer Motion
+- Zustand (State Management)
+- Fira Code (Monospace Font)
 
 ## Getting Started
 
-First, run the development server:
-
+1. Clone the repository:
 ```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
+git clone https://github.com/Boamah-Powers/CLI.me.git
+cd CLI.me
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Install dependencies:
+```bash
+pnpm install
+```
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+3. Run the development server:
+```bash
+pnpm dev
+```
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+4. Open [http://localhost:3000](http://localhost:3000) in your browser.
 
-## Learn More
+## Available Commands
 
-To learn more about Next.js, take a look at the following resources:
+- `help` - Display available commands
+- `clear` - Clear the terminal screen
+- `about` - Show information about me
+- `projects` - List my projects
+- `skills` - View my technical skills
+- `contact` - Get my contact information
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+## Customization
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+1. Edit `src/app/lib/commands.ts` to modify available commands and their responses
+2. Update `src/app/components/WelcomeMessage.tsx` to change the welcome message
+3. Modify `tailwind.config.ts` to adjust the terminal theme colors
+4. Update `src/app/globals.css` for additional styling
 
-## Deploy on Vercel
+## Contributing
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+Contributions are welcome! Please feel free to submit a Pull Request.
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## License
+
+This project is licensed under the MIT License - see the LICENSE file for details.
