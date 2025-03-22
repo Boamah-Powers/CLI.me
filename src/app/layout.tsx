@@ -37,14 +37,14 @@ export const metadata: Metadata = {
     "Interactive Portfolio",
     "Command Line Interface"
   ],
-  authors: [{ name: "Kwaaku Boamah-Powers", url: "https://cli.me" }],
+  authors: [{ name: "Kwaaku Boamah-Powers", url: "https://cli-me.vercel.app/" }],
   creator: "Kwaaku Boamah-Powers",
   publisher: "Kwaaku Boamah-Powers",
   openGraph: {
     title: "CLI.me — Kwaaku Boamah-Powers' Terminal Portfolio",
     description:
       "Welcome to my interactive terminal-inspired portfolio. Type commands to discover my projects, experience, and contact info.",
-    url: "https://cli.me",
+    url: "https://cli-me.vercel.app/",
     siteName: "CLI.me",
     images: [
       {
