@@ -1,7 +1,5 @@
 'use client';
 
-import { motion } from 'framer-motion';
-
 interface Output {
   type: 'command' | 'output';
   content: string;
