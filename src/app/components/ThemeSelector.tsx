@@ -2,7 +2,6 @@
 
 import { useThemeStore } from '@/app/lib/themeStore';
 import { themes } from '@/app/lib/themes';
-import { motion } from 'framer-motion';
 
 export default function ThemeSelector() {
   const { currentTheme, setTheme } = useThemeStore();
