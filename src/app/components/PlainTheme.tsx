@@ -1,5 +1,6 @@
 'use client';
 
+import { profileData } from '@/app/lib/profileData';
 import { motion } from 'framer-motion';
 
 export default function PlainTheme() {
@@ -12,19 +13,15 @@ export default function PlainTheme() {
     >
       <div className="max-w-4xl mx-auto">
         <header className="mb-12">
-          <h1 className="text-4xl font-bold mb-4">Kwaaku Boamah-Powers</h1>
+          <h1 className="text-4xl font-bold mb-4">{profileData.name}</h1>
           <p className="text-xl text-gray-600">
-            Software Engineer | Full-Stack Developer | Mobile Developer
+            {profileData.title}
           </p>
         </header>
 
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4">About Me</h2>
-          <p className="text-gray-700 leading-relaxed">
-            I'm a software engineer with a focus on full-stack web development, mobile app development, and cybersecurity.
-            With experience building real-time platforms using React, Node.js, and MongoDB, as well as cross-platform apps in Flutter,
-            I aim to create secure, efficient, and scalable solutions. I value clean code, strong security practices, and continuous learning.
-          </p>
+          <p className="text-gray-700 leading-relaxed">{profileData.about}</p>
         </section>
 
         <section className="mb-12">
@@ -33,32 +30,33 @@ export default function PlainTheme() {
             <div>
               <h3 className="font-medium mb-2">Frontend</h3>
               <ul className="list-disc list-inside text-gray-700">
-                <li>React</li>
-                <li>Next.js</li>
-                <li>TypeScript</li>
-                <li>Tailwind CSS</li>
+                {profileData.skills.frontend.map(skill => (
+                  <li key={skill}>{skill}</li>
+                ))}
               </ul>
             </div>
             <div>
               <h3 className="font-medium mb-2">Backend</h3>
               <ul className="list-disc list-inside text-gray-700">
-                <li>Node.js</li>
-                <li>Express</li>
-                <li>Python</li>
+                {profileData.skills.backend.map(skill => (
+                  <li key={skill}>{skill}</li>
+                ))}
               </ul>
             </div>
             <div>
               <h3 className="font-medium mb-2">Databases</h3>
               <ul className="list-disc list-inside text-gray-700">
-                <li>PostgreSQL</li>
-                <li>MongoDB</li>
+                {profileData.skills.databases.map(skill => (
+                  <li key={skill}>{skill}</li>
+                ))}
               </ul>
             </div>
             <div>
               <h3 className="font-medium mb-2">Other</h3>
               <ul className="list-disc list-inside text-gray-700">
-                <li>REST APIs</li>
-                <li>Git</li>
+                {profileData.skills.other.map(skill => (
+                  <li key={skill}>{skill}</li>
+                ))}
               </ul>
             </div>
           </div>
@@ -67,73 +65,64 @@ export default function PlainTheme() {
         <section className="mb-12">
           <h2 className="text-2xl font-semibold mb-4">Projects</h2>
           <div className="space-y-8">
-            <div className="border rounded-lg p-6">
-              <h3 className="text-xl font-medium mb-2">Real Estate App</h3>
-              <p className="text-gray-700 mb-4">
-                A full-stack property management platform with real-time chat functionality.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">React</span>
-                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">Node.js</span>
-                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">MongoDB</span>
-                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">Socket.io</span>
+            {profileData.projects.map(project => (
+              <div key={project.id} className="border rounded-lg p-6">
+                <h3 className="text-xl font-medium mb-2">{project.name}</h3>
+                <p className="text-gray-700 mb-4">
+                  {project.description}
+                </p>
+                <div className="mb-4">
+                  <h4 className="font-medium mb-2">Key Features:</h4>
+                  <ul className="list-disc list-inside text-gray-700">
+                    {project.features.map(feature => (
+                      <li key={feature}>{feature}</li>
+                    ))}
+                  </ul>
+                </div>
+                <div className="flex flex-wrap gap-2 mb-4">
+                  {project.tech.map(tech => (
+                    <span key={tech} className="px-3 py-1 bg-gray-100 rounded-full text-sm">
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+                <a
+                  href={project.link}
+                  className="text-blue-600 hover:underline"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                >
+                  View on GitHub →
+                </a>
               </div>
-              <a
-                href="https://github.com/Boamah-Powers/web-apps/tree/main/real-estate-app"
-                className="text-blue-600 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View on GitHub →
-              </a>
-            </div>
-
-            <div className="border rounded-lg p-6">
-              <h3 className="text-xl font-medium mb-2">Expense Tracker</h3>
-              <p className="text-gray-700 mb-4">
-                A cross-platform mobile app for tracking expenses and providing financial insights.
-              </p>
-              <div className="flex flex-wrap gap-2 mb-4">
-                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">Flutter</span>
-                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">Firebase</span>
-                <span className="px-3 py-1 bg-gray-100 rounded-full text-sm">Provider</span>
-              </div>
-              <a
-                href="https://github.com/Boamah-Powers/flutter-apps/tree/main/expense_tracker"
-                className="text-blue-600 hover:underline"
-                target="_blank"
-                rel="noopener noreferrer"
-              >
-                View on GitHub →
-              </a>
-            </div>
+            ))}
           </div>
         </section>
 
         <section>
           <h2 className="text-2xl font-semibold mb-4">Contact</h2>
           <div className="space-y-2 text-gray-700">
-            <p>Email: kb4242@nyu.edu</p>
+            <p>Email: {profileData.contact.email}</p>
             <p>
               GitHub:{' '}
               <a
-                href="https://github.com/boamah-powers"
+                href={profileData.contact.github}
                 className="text-blue-600 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                github.com/boamah-powers
+                {profileData.contact.github.replace('https://', '')}
               </a>
             </p>
             <p>
               LinkedIn:{' '}
               <a
-                href="https://linkedin.com/in/kwaaku-boamah-powers/"
+                href={profileData.contact.linkedin}
                 className="text-blue-600 hover:underline"
                 target="_blank"
                 rel="noopener noreferrer"
               >
-                linkedin.com/in/kwaaku-boamah-powers/
+                {profileData.contact.linkedin.replace('https://', '')}
               </a>
             </p>
           </div>
