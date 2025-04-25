@@ -13,7 +13,7 @@ const geistMono = Geist_Mono({
 });
 
 export const metadata: Metadata = {
-  title: "CLI.me — Kwaaku Boamah-Powers' Terminal Portfolio",
+  title: "Kwaaku Boamah-Powers' Portfolio",
   description: "Step into my interactive terminal portfolio. Explore my software engineering projects, cybersecurity experience, and tech stack—all through a command-line interface.",
   keywords: [
     "Kwaaku Boamah-Powers",
@@ -37,34 +37,34 @@ export const metadata: Metadata = {
     "Interactive Portfolio",
     "Command Line Interface"
   ],
-  authors: [{ name: "Kwaaku Boamah-Powers", url: "https://cli-me.vercel.app/" }],
+  authors: [{ name: "Kwaaku Boamah-Powers", url: "https://boamahpowers.vercel.app/" }],
   creator: "Kwaaku Boamah-Powers",
   publisher: "Kwaaku Boamah-Powers",
   openGraph: {
     title: "CLI.me — Kwaaku Boamah-Powers' Terminal Portfolio",
     description:
       "Welcome to my interactive terminal-inspired portfolio. Type commands to discover my projects, experience, and contact info.",
-    url: "https://cli-me.vercel.app/",
-    siteName: "CLI.me",
+    url: "https://boamahpowers.vercel.app/",
+    siteName: "Kwaaku Boamah-Powers' Portfolio",
     images: [
       {
-        url: "/og-image.png",
+        url: "/og-image.svg",
         width: 1200,
         height: 630,
-        alt: "CLI.me - Terminal Portfolio by Kwaaku Boamah-Powers",
+        alt: "Kwaaku Boamah-Powers' Portfolio",
       },
     ],
     type: "website",
   },
   twitter: {
     card: "summary_large_image",
-    title: "CLI.me — Terminal Portfolio of Kwaaku Boamah-Powers",
+    title: "Kwaaku Boamah-Powers' Portfolio",
     description:
       "Software engineer & cybersecurity enthusiast. Explore my projects and skills via an interactive terminal interface.",
-    images: ["/og-image.png"],
+    images: ["/og-image.svg"],
   },
   icons: {
-    icon: "/favicon.ico",
+    icon: "/favicon.png",
   },
 };
 
