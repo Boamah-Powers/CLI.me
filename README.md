@@ -1,66 +1,30 @@
-# Terminal-Style Personal Website
+# CLI.me
 
-A modern, interactive personal website that mimics a terminal/command-line interface. Built with Next.js, TypeScript, and Tailwind CSS.
+A terminal-style portfolio for Kwaaku Boamah-Powers, built with Next.js, TypeScript, and Tailwind CSS. The site reflects the current résumé and highlights research, software engineering, and applied ML work.
 
-## Features
+## Included Content
 
-- 🖥️ Authentic terminal look and feel
-- ⌨️ Interactive command-line interface
-- 📝 Typing animations for output
-- 🔄 Command history navigation
-- 🎨 Custom terminal styling with scanlines
-- 📱 Mobile-responsive design
-- ♿ Accessibility support
+- Research Assistant experience in the Music and Sound Cultures (MaSC) Research Group
+- Software engineering internships at Intuit and Buzz Mobility
+- Computer Science degree progress at NYU Abu Dhabi
+- Current skills spanning Python, C/C++, JavaScript, ML, audio processing, and data engineering
+- Key project highlights and contact information
 
-## Tech Stack
+## Run locally
 
-- Next.js 14 (App Router)
-- TypeScript
-- Tailwind CSS
-- Framer Motion
-- Zustand (State Management)
-- Fira Code (Monospace Font)
-
-## Getting Started
-
-1. Clone the repository:
-```bash
-git clone https://github.com/Boamah-Powers/CLI.me.git
-cd CLI.me
-```
-
-2. Install dependencies:
 ```bash
 pnpm install
-```
-
-3. Run the development server:
-```bash
 pnpm dev
 ```
 
-4. Open [http://localhost:3000](http://localhost:3000) in your browser.
+Open http://localhost:3000.
 
-## Available Commands
+## Project structure
 
-- `help` - Display available commands
-- `clear` - Clear the terminal screen
-- `about` - Show information about me
-- `projects` - List my projects
-- `skills` - View my technical skills
-- `contact` - Get my contact information
+- `src/app/lib/profileData.ts` — source for the portfolio text and command outputs
+- `src/app/lib/commands.ts` — terminal command handling
+- `src/app/components/WelcomeMessage.tsx` — landing terminal greeting
 
-## Customization
+## Notes
 
-1. Edit `src/app/lib/commands.ts` to modify available commands and their responses
-2. Update `src/app/components/WelcomeMessage.tsx` to change the welcome message
-3. Modify `tailwind.config.ts` to adjust the terminal theme colors
-4. Update `src/app/globals.css` for additional styling
-
-## Contributing
-
-Contributions are welcome! Please feel free to submit a Pull Request.
-
-## License
-
-This project is licensed under the MIT License - see the LICENSE file for details.
+This portfolio is intentionally aligned with the current résumé in `resume.md` as the source of truth.

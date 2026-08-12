@@ -6,8 +6,8 @@ import { useEffect, useState } from 'react';
 export default function WelcomeMessage() {
   const [displayedText, setDisplayedText] = useState('');
   const [isTyping, setIsTyping] = useState(true);
-  const welcomeText = `Welcome to Kwaaku Boamah-Powers' Terminal Portfolio!
-Type 'help' to see available commands.
+  const welcomeText = `Welcome to Kwaaku Boamah-Powers' terminal portfolio.
+Type 'help' to explore my research, software engineering work, and projects.
 `;
 
   useEffect(() => {

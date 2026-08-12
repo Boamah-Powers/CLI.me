@@ -21,6 +21,9 @@ export const executeCommand = async (command: string): Promise<string> => {
 			const response = commandResponses[cmd as keyof typeof commandResponses];
 			return isFunction(response) ? response(command) : response;
 		default:
+			if (cmd.startsWith('experience')) {
+				return commandResponses.experience(command);
+			}
 			if (cmd.startsWith('project')) {
 				return commandResponses.project(command);
 			}

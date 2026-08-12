@@ -1,6 +1,7 @@
 import { ComponentType } from 'react';
 import TerminalWindow from '@/app/components/TerminalWindow';
 import PlainTheme from '@/app/components/PlainTheme';
+import MusicTheme from '@/app/components/MusicTheme';
 
 export type Theme = {
   id: string;
@@ -21,6 +22,12 @@ export const themes: Theme[] = [
     name: 'Plain',
     component: PlainTheme,
     description: 'Traditional portfolio layout'
+  },
+  {
+    id: 'music',
+    name: 'Music',
+    component: MusicTheme,
+    description: 'Brutalist music showcase'
   }
 ];
 

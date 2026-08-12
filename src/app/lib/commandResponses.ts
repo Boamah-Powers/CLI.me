@@ -5,12 +5,34 @@ export const commandResponses = {
 - help: Show this help message
 - clear: Clear the terminal screen
 - about: Learn more about me
+- experience: See a summary of my work history
+- experience <number>: View one role in detail
 - skills: View my technical skills
 - projects: See my projects
 - project <number> [-v]: Get details about a specific project (use -v to open GitHub link)
 - contact: Get my contact information`,
 
 	about: profileData.about,
+
+	experience: (command: string) => {
+		const match = command.match(/experience\s+(\d+)/i);
+		if (match) {
+			const index = parseInt(match[1], 10) - 1;
+			const experience = profileData.experiences[index];
+			if (!experience) {
+				return 'Experience not found. Type "experience" to see available roles.';
+			}
+
+			return `${experience.title} | ${experience.organization}\n${experience.period}\n\n${experience.summary}\n\nHighlights:\n${experience.highlights.map((item) => `- ${item}`).join("\n")}`;
+		}
+
+		return `Experience:\n${profileData.experiences
+			.map(
+				(exp, index) =>
+					`${index + 1}. ${exp.title} | ${exp.organization} (${exp.period})\n   ${exp.summary}`
+			)
+			.join("\n\n")}\n\nType 'experience <number>' to view one role in detail.`;
+	},
 
 	skills: `Technical Skills:
 - Frontend: ${profileData.skills.frontend.join(", ")}
